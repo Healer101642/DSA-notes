@@ -1,5 +1,5 @@
 What are Arrays?
-Arrays are basically a collection of elements of the same data type.
+Arrays are collections of elements of the same data type.
 
 Arrays Types:
 1. One-dimensional arrays (1D) eg. a[0]
@@ -12,13 +12,13 @@ Usually, return 0 is written at the end to show the program ended successfully.
 3. printf - the function is used to display output on the screen
 4. scanf - the function is used to take input from the user. It only prints output
 5. for loop - a loop is used to repeat a block of code until a condition becomes false.
-Syntax: for(initialization; condition; increment/decrement)
-eg. for(i = 0; i < n; i++)
-i = 0 → starting value of the loop variable
-i < n → loop runs while this condition is true
-i++ → after each iteration, i increases by 1
-\n - print the output on a new line
-\t - an escape sequence in C used inside strings
+   Syntax: for(initialization; condition; increment/decrement)
+   eg. for(i = 0; i < n; i++)
+      i = 0 → starting value of the loop variable
+      i < n → loop runs while this condition is true
+      i++ → after each iteration, i increases by 1
+      \ n - print the output on a new line
+      \t - an escape sequence in C used inside strings
 
 # Creation of 1D array 
 #include<stdio.h>
@@ -41,4 +41,4 @@ int main()
 return 0;
 }
 
-I hope this repo helps you. I personally did C programming on Dev C++
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners. It's my first time creating one, so feel free to suggest
