@@ -1,0 +1,52 @@
+#Array Deletion
+
+Explanation:
+1. Here we are creating a normal array
+2. Then we are searching for an element to delete
+3. If it meets the deletion condition, loop
+4. It will delete that element by decreasing the size
+
+#include<stdio.h>
+int main()
+{
+   int a[10],, i, n, val, j;
+   printf(" Enter no of elements: ");
+   scanf("%d", &n);
+   for(i=0;i<n;i++)
+   {
+      printf("\n The array is: ");
+      for(i=0;i<n;i++)
+      {
+         printf("\t %d",a[i]);
+      }
+
+      // Searching for an element to delete //
+      printf("\n Enter the value for searching: ");
+      scanf("%d", &val);
+
+      // Deletion condition //
+      if(i==n)
+      {
+         printf("\n Element not found");
+      }
+      else
+      {
+         for(j=1;i<n;j++)
+         {
+           a[j] = a[j+1];
+         }
+         n--;
+
+         // Printing the final array //
+         printf(" Resultant array is: \n ");
+         for(i=0;i<n;i++)
+         {
+            printf("%d", a[i]);
+          }
+          printf(" \n ");
+
+          return 0;
+    }
+
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners. 
+It's my first time creating one, so feel free to suggest
