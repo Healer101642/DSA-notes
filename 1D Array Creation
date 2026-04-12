@@ -5,7 +5,7 @@ Array Properties:
 1. Stores data in contingency memory format.
 2. Arrays are static; once the size of an array is declared, it can't be changed.
 3. Arrays are indexed, starting from 0 to (size -1).
-   eg. size of an array 6, then the elements can be stored from index 0 to 5
+   eg. size of an array 6, then the elements can be stored from index 0 to 5.
 4. The advantage of Arrays over Linked lists is that in arrays, there is no memory overhead (wastage of memory).
 
 Arrays Types:
