@@ -1,0 +1,47 @@
+#Linear search
+
+Explanation:
+1. User enters an element to search
+2. Searching is done by checking every element starting from the 0th index
+3. Time-consuming as per time complexity
+ - worst case: element to be searched is at the last index
+ - best case: element to be searched is at the first index
+ - average case: element to be searched is at the middle of the array
+
+
+#include<stdio.h>
+int main()
+{
+  int a[10], n, i, element;
+    
+printf("Enter no.of elements");
+scanf("%d", &n);
+
+    for(i=0; i<n; i++)
+    {
+        printf("Enter %d element", i);
+        scanf("%d",&a[i]);
+    }
+    
+    printf("Enter element to be searched");
+    scanf("%d", &element);
+    
+    for(i=0; i<n; i++)
+    {
+        if(a[i]==element)
+            break;
+    }
+    if(i==n)
+    {
+        printf("Element not found");
+    }
+    else
+    {
+        printf("Element %d found at index %d", element, i);
+    }
+
+  return 0;
+}
+
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners. 
+It's my first time creating one, so feel free to suggest
