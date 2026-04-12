@@ -4,7 +4,7 @@ Explanation:
 1. Here we are creating a normal array
 2. Then we are searching for an element to delete
 3. If it meets the deletion condition, loop
-4. It will delete that element by decreasing the size
+4. It will delete that element by decreasing the size 
 
 #include<stdio.h>
 int main()
