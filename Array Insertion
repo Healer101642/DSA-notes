@@ -1,0 +1,52 @@
+#Array insertion code 
+
+Explanation:
+1. Here we are first creating a normal array
+2. Then, taking the value of the element to be inserted
+3. And at what index should that element be stored
+4. Printing will finally show the array along with the inserted elements
+5. Here, comments, the line that doesn't execute in the output is written within "// //."
+
+#include<stdio.h>
+int main()
+{
+
+// Normal creation of array //
+  int a[10], i,n, num, index;
+  printf("Enter no of elements: ");
+  scanf("%d", &n);
+  for(i=0;i<n;i++)
+  {
+      printf("\n Enter element for index %d; ",i);
+      scanf("%d", &a[i]);
+   }
+
+   printf("\n The array is: ");
+   for(i=0;i<n;i++)
+   {
+      printf("%d \t", a[i]);
+   }
+
+// Taking user input on which element to add and to store where //
+   printf("\n Enter the element to be inserted: ");
+   scanf("%d", &num);
+   printf("\n Enter index for the element: ");
+   scanf("%d", &index);
+
+   for(i=n,i>index;i--)
+   {
+      a[i] = a[i-1];
+   }
+
+    a[index]=num;
+    n++;
+
+// Printing final array //
+    printf("\n The array is: ");
+    for(i=0;i<n;i++)
+    {
+       printf(" \t %d", a[i]);
+    }
+
+    return 0;
+}
