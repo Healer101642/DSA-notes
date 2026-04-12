@@ -1,0 +1,41 @@
+#Array Max
+
+Explanation:
+1. To find the greatest element in an array
+2. Checks & compares if an element is greater than another; if so, then that element = max
+
+#include<stdio.h>
+int main()
+{
+
+// Normal array creation //
+   int a[i], n, i, max, index;
+   printf("Enter no of elements: ");
+   scanf("%d", &n);
+   for(i=0;i<n;i++)
+   {
+        printf(" Enter elemets at the index %d; ",i);
+        scanf("%d",&a[i]);
+    }
+
+// starting checking if an element is the greatest from index 0 //
+  max = a[0];
+  index = 0;
+
+// if the element is greater than the previous, max shifts to it //
+  for(i=0;i<n;i++)
+  {
+      if(a[i]>max)
+      {
+           max = a[i];
+           index = i;
+       }
+
+  printf("\n Greatest element = %d ",max);
+  printf(" Index number = %d", index);
+
+  return 0;
+}
+
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners. 
+It's my first time creating one, so feel free to suggest
