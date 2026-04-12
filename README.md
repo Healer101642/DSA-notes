@@ -2,11 +2,15 @@
 
 ## Table of Contents
 1. Arrays
-2. Linked list
+  - 1D arrays
+  - 2D Arrays
+3. Linked list
   - 2.1 Singly linked list
   - 2.2 Doubly linked list
   - 2.3 Circular linked list
 3. Stack
+  - implemented with arrays
+  - implemented with a linked list
 4. Queue
 5. Trees
 6. Graphs
