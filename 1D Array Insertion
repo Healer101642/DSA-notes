@@ -5,7 +5,7 @@ Explanation:
 2. Then, taking the value of the element to be inserted
 3. And at what index should that element be stored
 4. Printing will finally show the array along with the inserted elements
-5. Here, comments, the line that doesn't execute in the output is written within "// //."
+5. Here, comments, the line that doesn't execute in the output is written within "// //." 
 
 #include<stdio.h>
 int main()
