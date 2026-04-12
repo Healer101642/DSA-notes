@@ -2,7 +2,7 @@
 
 ## Table of Contents
 1 Arrays
-2 Linked list
+2. Linked list
   - 2.1 Singly linked list
   - 2.2 Doubly linked list
   - 2.3 Circular linked list
