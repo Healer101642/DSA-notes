@@ -1,0 +1,44 @@
+#2D Array creation
+
+Explanation:
+1. r = rows
+2. c = columns
+3. Same as it was for no of elements in a 1D array
+4. Here, you need rows & columns to form a matrix
+
+#include<stdio.h>
+int main()
+{
+  int A[10][10], i, j, r, c;
+
+ printf("Enter number of rows for array A : ");
+ scanf("%d",&r);
+
+ printf("\n Enter number of columns for array A : ");
+ scanf("%d",&c);
+
+ for(i=0;i<r;i++)
+ {
+   for(j=0;j<c;j++)
+   {
+      printf("Enter value for A %d %d \n",i,j);
+      scanf("%d",&A[i][j]);
+    }
+ }
+
+ printf("The array A is : \n");
+ for(i=0;i<r;i++)
+  {
+     for(j=0;j<c;j++)
+     {
+         printf("%d \t",A[i][j]);
+      }
+       printf("\n");
+   }
+
+return 0;
+
+}
+
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners.
+It's my first time creating one, so feel free to suggest
