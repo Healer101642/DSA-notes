@@ -10,6 +10,11 @@ Properties of a linked list:
 4. There are 3 types of linked lists: singly, doubly, and circular
 5. We can add and delete a node from the front, middle & end
 
+What is a Singly Linked List?
+1. A singly linked list where traversing for a node is unidirectional
+, e.g., from the start of the linked list node to the end, where there is NULL instead of a pointer
+2. It has data and only one pointer per node, which points to the nexxt node
+
 #Singly Linked List Creation
 
 #include  <stdio.h>
@@ -63,3 +68,6 @@ int main()
     }
   return 0;
 }
+
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners.
+It's my first time creating one, so feel free to suggest
