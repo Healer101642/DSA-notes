@@ -11,8 +11,8 @@ Properties of a linked list:
 5. We can add and delete a node from the front, middle & end
 
 What is a Singly Linked List?
-1. A singly linked list where traversing for a node is unidirectional
-, e.g., from the start of the linked list node to the end, where there is NULL instead of a pointer
+1. A singly linked list where traversing for a node is unidirectional.
+e.g., from the start of the linked list node to the end, where there is NULL instead of a pointer
 2. It has data and only one pointer per node, which points to the nexxt node
 
 #Singly Linked List Creation
