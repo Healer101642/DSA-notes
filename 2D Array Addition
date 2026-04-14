@@ -18,14 +18,14 @@ int main()
 // Creation of Matrix M //
   printf("Enter number of rows for array M : ");
   scanf("%d",&r1);
-  printf("\n Enter number of columns for array M : ");
+  printf("\nEnter number of columns for array M : ");
   scanf("%d",&c1);
 
   for(i=0;i<r1;i++)
    {
      for(j=0;j<c1;j++)
       {
-          printf("Enter value for M %d %d \n",i,j); 
+          printf("\nEnter value for M %d %d \n",i,j); 
           scanf("%d",&M[i][j]);
        }
     }
@@ -34,14 +34,14 @@ int main()
    printf("Enter number of rows for array N : ");
    scanf("%d",&r2);
 
-   printf("\n Enter number of columns for array N : ");
+   printf("\nEnter number of columns for array N : ");
    scanf("%d",&c2);
 
    for(i=0;i<r2;i++)
     {
       for(j=0;j<c2;j++)
        {
-          printf("Enter value for N %d %d \n",i,j);
+          printf("\nEnter value for N %d %d \n",i,j);
           scanf("%d",&N[i][j]);
         }
      }   
