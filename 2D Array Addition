@@ -1,6 +1,5 @@
 #2D Array Addition
 
-
 Explanation:
 1. Ask for how many rows and columns the user wants for Matrix M 
 2. Addition results will be stored in Z[10][10], here [10][10] is size allocated for the array in the memory
