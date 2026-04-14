@@ -1,0 +1,83 @@
+#2D Array Multiplication
+
+#include<stdio.h>
+int main()
+{
+    int M[10][10], N[10][10], X[10][10];
+    int i, j, k, r1, c1, r2, c2;
+
+    // Creation of Matrix M //
+    printf("Enter number of rows for array M : ");
+    scanf("%d", &r1);
+    printf("\nEnter number of columns for array M : ");
+    scanf("%d", &c1);
+
+    for(i = 0; i < r1; i++)
+    {
+        for(j = 0; j < c1; j++)
+        {
+            printf("\nEnter value for M %d %d \n", i, j); 
+            scanf("%d", &M[i][j]);
+        }
+    }
+
+    // Creation of Matrix N //
+    printf("Enter number of rows for array N : ");
+    scanf("%d", &r2);
+    printf("\nEnter number of columns for array N : ");
+    scanf("%d", &c2);
+
+    for(i = 0; i < r2; i++)
+    {
+        for(j = 0; j < c2; j++)
+        {
+            printf("\nEnter value for N %d %d \n", i, j);
+            scanf("%d", &N[i][j]);
+        }
+    }
+
+    // Multiplication condition //
+    if(c1 == r2)
+    {
+        // Initialize result matrix to 0
+        for(i = 0; i < r1; i++)
+        {
+            for(j = 0; j < c2; j++)
+            {
+                X[i][j] = 0;
+            }
+        }
+
+        // Matrix Multiplication Logic
+        for(i = 0; i < r1; i++)
+        {
+            for(j = 0; j < c2; j++)
+            {
+                for(k = 0; k < c1; k++)
+                {
+                    X[i][j] += M[i][k] * N[k][j];
+                }
+            }
+        }
+
+        // Printing result matrix
+        printf("\nMultiplication of Array M & Array N is:\n");
+        for(i = 0; i < r1; i++)
+        {
+            for(j = 0; j < c2; j++)
+            {
+                printf("%d \t", X[i][j]);
+            }
+            printf("\n");
+        }
+    }
+    else
+    {
+        printf("Multiplication not possible\n");
+    }
+
+    return 0;
+}
+
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners.
+It's my first time creating one, so feel free to suggest
