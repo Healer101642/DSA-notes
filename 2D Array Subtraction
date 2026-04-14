@@ -1,0 +1,80 @@
+#2D Array Subtraction
+
+Explanation:
+1. Ask for how many rows and columns the user wants for Matrix M
+2. Subtraction results will be stored in X[10][10], here [10][10] is size allocated for the array in the memory
+3. Then we create a loop to take in values for the matrices, the loop is based on no of rows & columns of the matrix the user put input for
+4. Ask for how many rows and columns the user wants for Matrix N
+5. Then we create a loop to take in values for the matrices, the loop is based on no of rows & columns of the matrix the user put input for
+6. If the rows & coulmns of both the matrices match, then only the subtraction condition takes place
+7. Then the condition " X[i][j]=M[i][j] - N[i][j] " is put, here i=rows & j=columns
+8. Then, finally, printing the subtracted array results
+
+#include  <stdio.h>
+int main()
+{
+  int M[10][10],N[10][10] ,X[10][10],i, j, r1, c1,r2,c2;
+
+// Creation of Matrix M //
+  printf("Enter number of rows for array M : ");
+  scanf("%d",&r1);
+  printf("\nEnter number of columns for array M : ");
+  scanf("%d",&c1);
+
+  for(i=0;i<r1;i++)
+   {
+     for(j=0;j<c1;j++)
+      {
+          printf("\nEnter value for M %d %d \n",i,j); 
+          scanf("%d",&M[i][j]);
+       }
+    }
+
+  // Creation of Matrix N //
+   printf("Enter number of rows for array N : ");
+   scanf("%d",&r2);
+
+   printf("\nEnter number of columns for array N : ");
+   scanf("%d",&c2);
+
+   for(i=0;i<r2;i++)
+    {
+      for(j=0;j<c2;j++)
+       {
+          printf("\nEnter value for N %d %d \n",i,j);
+          scanf("%d",&N[i][j]);
+        }
+     }   
+
+    // Subtraction condition, if satisfied, subtraction takes place //
+    if(r1==r2 && c1==c2)
+    {
+       for(i=0;i<r2;i++)
+         {
+           for(j=0;j<c2;j++)
+             {
+                X[i][j]=M[i][j]-N[i][j];
+             }
+          }
+
+        // Printing subtracted array //
+          printf("\nSubtraction of Array M & Array N is: \n");
+          for(i=0;i<r2;i++)
+          {
+              for(j=0;j<c2;j++)
+              {
+                  printf("%d \t",X[i][j]);
+               }
+                printf("\n");
+           }         
+     }
+     else
+     {
+        printf("Addition not possible \n");
+     }
+ 
+    return 0;
+}
+
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners.
+It's my first time creating one, so feel free to suggest
