@@ -1,0 +1,65 @@
+What is a linked list?
+A linked list is a node structure consisting of two parts:
+ - data
+ - pointer to the next node (represented with " * pointer_name ")
+
+Properties of a linked list:
+1. Dynamic in size
+2. Uses malloc (Memory allocation) that takes in the size of the node and  automatically assigns the required memory for it
+3. The malloc function resides in #include <stdlib.h>
+4. There are 3 types of linked lists: singly, doubly, and circular
+5. We can add and delete a node from the front, middle & end
+
+#Singly Linked List Creation
+
+#include  <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+
+int main()
+{
+  struct node *start = NULL,*newnode;
+    struct node *temp;
+    int val;
+    printf("Enter a value for node");
+    scanf("%d",&val);
+    do
+    {
+   // Creation of a new node for a Linked List //
+    newnode=(struct node *)malloc(sizeof(struct node));
+        newnode->data=val;
+    
+    if(start==NULL)
+    {
+        start=newnode;
+        newnode->next=NULL;
+    }
+    else
+    {
+        temp=start;
+        while(temp->next!=NULL)
+        {
+            temp=temp->next;
+        }
+        temp->next=newnode;
+        newnode->next=NULL;
+    }
+        printf("Enter a value or -1 to exit");
+        scanf("%d",&val);
+    }while(val!=-1);
+    
+   // Printing the Linked List //
+    temp=start;
+    while(temp!=NULL)
+    {
+        printf("%d \t ",temp->data);
+        temp=temp->next;
+    }
+  return 0;
+}
