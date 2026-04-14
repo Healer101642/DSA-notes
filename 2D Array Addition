@@ -2,7 +2,7 @@
 
 
 Explanation:
-1. Ask for how many rows and columns the user wants for Matrix M
+1. Ask for how many rows and columns the user wants for Matrix M 
 2. Addition results will be stored in Z[10][10], here [10][10] is size allocated for the array in the memory
 3. Then we create a loop to take in values for the matrices, the loop is based on no of rows & columns of the matrix the user put input for
 4. Ask for how many rows and columns the user wants for Matrix N
