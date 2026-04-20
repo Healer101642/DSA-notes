@@ -1,0 +1,53 @@
+#Singly Linked List: adding an element at the START
+
+Explanation:
+1. Create a new node. Allocate memory using malloc and store the input value in newnode->data.
+Link the new node to the current list
+2. Set newnode->next = start; so the new node points to the existing first node.. Update the head pointer
+3. Assign start = newnode; so this new node becomes the first node of the list. Repeat until termination condition
+4. Continue inserting at the start for each input value until -1 is entered, then traverse and print the list.
+
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+int main()
+{
+    struct node *start = NULL, *newnode;
+    int val;
+
+    printf("Enter a value to be inserted: ");
+    scanf("%d", &val);
+
+    while(val != -1)
+    {
+        // Create new node
+        newnode = (struct node *)malloc(sizeof(struct node));
+        newnode->data = val;
+
+        // Insert at the beginning
+        newnode->next = start;
+        start = newnode;
+
+        printf("Enter a value or -1 to exit: ");
+        scanf("%d", &val);
+    }
+
+    // Printing the Linked List
+    temp = start;
+    while(temp != NULL)
+    {
+        printf("%d \t ", temp->data);
+        temp = temp->next;
+    }
+
+    return 0;
+}
+
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners.
+It's my first time creating one, so feel free to suggest
