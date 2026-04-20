@@ -1,4 +1,4 @@
-#Singly Linked List: Adding an element in the MIDDLE
+#Singly Linked List: Adding an element in the MIDDLE 
 
 Explanation:
 1. Create the linked list by inserting nodes at the end until -1 is entered.
