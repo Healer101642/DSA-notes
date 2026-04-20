@@ -1,0 +1,77 @@
+#Singly Linked List: Deleting an element at the start
+
+Explanation:
+1. Create the linked list by inserting nodes until -1 is entered.
+2. Check if the list is empty before deletion.
+3. Move the start to the next node and free the first node.
+4. Print the updated linked list from start to NULL.
+
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+int main()
+{
+    struct node *start = NULL, *newnode, *temp;
+    int val;
+
+    // Step 1: Create Linked List
+    printf("Enter values to create list (-1 to stop): ");
+    scanf("%d", &val);
+
+    while(val != -1)
+    {
+        newnode = (struct node *)malloc(sizeof(struct node));
+        newnode->data = val;
+        newnode->next = NULL;
+
+        if(start == NULL)
+        {
+            start = newnode;
+        }
+        else
+        {
+            temp = start;
+            while(temp->next != NULL)
+            {
+                temp = temp->next;
+            }
+            temp->next = newnode;
+        }
+
+        scanf("%d", &val);
+    }
+
+    // Step 2: Delete at Start
+    if(start == NULL)
+    {
+        printf("\nList is empty, nothing to delete.\n");
+    }
+    else
+    {
+        temp = start;
+        start = start->next;
+        free(temp);
+        printf("\nFirst node deleted successfully.\n");
+    }
+
+    // Step 3: Print Linked List
+    printf("\nUpdated Linked List:\n");
+    temp = start;
+    while(temp != NULL)
+    {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL");
+
+    return 0;
+}
+
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners.
+It's my first time creating one, so feel free to suggest
