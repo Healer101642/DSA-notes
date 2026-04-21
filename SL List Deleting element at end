@@ -1,0 +1,89 @@
+#Singly Linked List: Deleting at the end
+
+Explanation: 
+
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+int main()
+{
+    struct node *start = NULL, *newnode, *temp, *prev;
+    int val;
+
+    // Step 1: Create Linked List
+    printf("Enter values to create list (-1 to stop): ");
+    scanf("%d", &val);
+
+    while(val != -1)
+    {
+        newnode = (struct node *)malloc(sizeof(struct node));
+        newnode->data = val;
+        newnode->next = NULL;
+
+        if(start == NULL)
+        {
+            start = newnode;
+        }
+        else
+        {
+            temp = start;
+            while(temp->next != NULL)
+            {
+                temp = temp->next;
+            }
+            temp->next = newnode;
+        }
+
+        scanf("%d", &val);
+    }
+
+    // Step 2: Delete at End
+    if(start == NULL)
+    {
+        printf("\nList is empty.\n");
+    }
+    else if(start->next == NULL)
+    {
+        // Only one node
+        free(start);
+        start = NULL;
+        printf("\nLast node deleted (list is now empty).\n");
+    }
+    else
+    {
+        temp = start;
+        prev = NULL;
+
+        // Traverse to last node
+        while(temp->next != NULL)
+        {
+            prev = temp;
+            temp = temp->next;
+        }
+
+        prev->next = NULL;
+        free(temp);
+        printf("\nLast node deleted successfully.\n");
+    }
+
+    // Step 3: Print Linked List
+    printf("\nUpdated Linked List:\n");
+    temp = start;
+    while(temp != NULL)
+    {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL");
+
+    return 0;
+}
+
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners.
+It's my first time creating one, so feel free to suggest
