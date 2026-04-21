@@ -1,14 +1,10 @@
 #Singly Linked List: Deleting at the end
 
 Explanation: 
-Traverse to last node
-Move through the list using temp until temp->next == NULL (this is the last node), while keeping track of the previous node (prev).
-Handle single node case
-If start->next == NULL, it means only one node exists → free it and set start = NULL.
-Update link of previous node
-Set prev->next = NULL to remove the last node from the list.
-Free the last node
-Use free(temp); to delete the node from memory and prevent memory leaks.
+1. Traverse to last node: Move through the list using temp until temp->next == NULL (this is the last node), while keeping track of the previous node (prev).
+2. Handle single node case: If start->next == NULL, it means only one node exists → free it and set start = NULL.
+3. Update link of previous node: Set prev->next = NULL to remove the last node from the list.
+4. Free the last node: Use free(temp) to delete the node from memory and prevent memory leaks.
 
 #include<stdio.h>
 #include<stdlib.h>
