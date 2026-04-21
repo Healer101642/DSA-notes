@@ -1,0 +1,103 @@
+#Singly Linked List: Deleting in the middle
+
+Explanation:
+1. Traverse to target position: Move through the list until you reach the node to be deleted, while keeping track of both the current node (temp) and the previous node (prev).
+2. Maintain the previous pointer: Since it’s a singly linked list, store the previous node so you can reconnect links after deletion.
+3. Relink nodes: Update the link using: prev->next = temp->next;
+This bypasses (removes) the target node from the list.
+4. Free memory: Use free(temp) to delete the node from memory and avoid memory leaks.
+
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+int main()
+{
+    struct node *start = NULL, *newnode, *temp, *prev;
+    int val, pos, i;
+
+    // Step 1: Create Linked List
+    printf("Enter values to create list (-1 to stop): ");
+    scanf("%d", &val);
+
+    while(val != -1)
+    {
+        newnode = (struct node *)malloc(sizeof(struct node));
+        newnode->data = val;
+        newnode->next = NULL;
+
+        if(start == NULL)
+        {
+            start = newnode;
+        }
+        else
+        {
+            temp = start;
+            while(temp->next != NULL)
+            {
+                temp = temp->next;
+            }
+            temp->next = newnode;
+        }
+
+        scanf("%d", &val);
+    }
+
+    // Step 2: Delete at Middle (by position)
+    printf("\nEnter position to delete: ");
+    scanf("%d", &pos);
+
+    if(start == NULL)
+    {
+        printf("List is empty.\n");
+    }
+    else if(pos == 1)
+    {
+        // delete first node
+        temp = start;
+        start = start->next;
+        free(temp);
+    }
+    else
+    {
+        temp = start;
+        prev = NULL;
+
+        for(i = 1; i < pos && temp != NULL; i++)
+        {
+            prev = temp;
+            temp = temp->next;
+        }
+
+        if(temp == NULL)
+        {
+            printf("Invalid position.\n");
+        }
+        else
+        {
+            prev->next = temp->next;
+            free(temp);
+            printf("Node deleted successfully.\n");
+        }
+    }
+
+    // Step 3: Print Linked List
+    printf("\nUpdated Linked List:\n");
+    temp = start;
+    while(temp != NULL)
+    {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL");
+
+    return 0;
+}
+
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners.
+It's my first time creating one, so feel free to suggest
