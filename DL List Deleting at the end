@@ -1,0 +1,84 @@
+#Doubly Linked List: deleting at the end
+
+Explanation
+1. The doubly linked list is initially created using dynamic memory allocation.
+2. Traversal is performed until the last node is reached.
+3. The second last node’s next pointer is set to NULL to detach the last node.
+4. The last node is deleted using free() to remove it from memory.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+    struct node *prev;
+};
+
+int main()
+{
+    struct node *start = NULL, *newnode, *temp;
+    int val;
+
+    // Creating list
+    printf("Enter value (-1 to stop): ");
+    scanf("%d", &val);
+
+    while(val != -1)
+    {
+        newnode = (struct node*)malloc(sizeof(struct node));
+        newnode->data = val;
+        newnode->next = NULL;
+
+        if(start == NULL)
+        {
+            newnode->prev = NULL;
+            start = newnode;
+        }
+        else
+        {
+            temp = start;
+            while(temp->next != NULL)
+                temp = temp->next;
+
+            temp->next = newnode;
+            newnode->prev = temp;
+        }
+
+        printf("Enter value (-1 to stop): ");
+        scanf("%d", &val);
+    }
+
+    // Deletion at end
+    if(start == NULL)
+        printf("List is empty.");
+    else
+    {
+        temp = start;
+
+        while(temp->next != NULL)
+            temp = temp->next;
+
+        if(temp->prev != NULL)
+            temp->prev->next = NULL;
+        else
+            start = NULL;
+
+        free(temp);
+    }
+
+    // Printing list
+    printf("\nAfter Deletion:\n");
+    temp = start;
+    while(temp != NULL)
+    {
+        printf("%d \t", temp->data);
+        temp = temp->next;
+    }
+
+    return 0;
+}
+
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners.
+It's my first time creating one, so feel free to suggest
