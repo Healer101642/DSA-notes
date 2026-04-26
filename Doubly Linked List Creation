@@ -1,0 +1,68 @@
+# Doubly Linked List Creation
+
+Explanation:
+1. A structure is defined with data, next, and prev pointers to enable two-way linking between nodes.
+2. Each new node is created dynamically using malloc() and initialized with the given value.
+3. If the list is empty, the new node becomes the start; otherwise, it is inserted at the end by updating both next and prev links.
+4. The list is traversed from the start using the next pointer to display all node values.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+    struct node *prev;  
+};
+
+int main()
+{
+    struct node *start = NULL, *newnode;
+    struct node *temp;
+    int val;
+
+    printf("Enter a value for node: ");
+    scanf("%d", &val);
+
+    while(val != -1)
+    {
+        // Creation of a new node
+        newnode = (struct node *)malloc(sizeof(struct node));
+        newnode->data = val;
+        newnode->next = NULL;
+        newnode->prev = NULL;
+
+        if(start == NULL)
+        {
+            start = newnode;
+        }
+        else
+        {
+            temp = start;
+            while(temp->next != NULL)
+            {
+                temp = temp->next;
+            }
+            temp->next = newnode;
+            newnode->prev = temp;   // Important for DLL
+        }
+
+        printf("Enter a value or -1 to exit: ");
+        scanf("%d", &val);
+    }
+
+    // Printing the Doubly Linked List (Forward)
+    printf("\nDoubly Linked List (Forward):\n");
+    temp = start;
+    while(temp != NULL)
+    {
+        printf("%d \t", temp->data);
+        temp = temp->next;
+    }
+
+    return 0;
+}
+
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners.
+It's my first time creating one, so feel free to suggest
