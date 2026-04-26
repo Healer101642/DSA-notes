@@ -1,0 +1,86 @@
+#Doubly Linked List: Adding an element in the middle
+
+Explanation:
+1. The program first creates an initial doubly linked list using end insertion.
+2. The position for insertion is taken from the user.
+3. Traversal is performed up to the node before the given position.
+4. The new node is inserted by adjusting four links: newnode->next, newnode->prev, temp->next, and the next node’s prev.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+    struct node *prev;
+};
+
+int main()
+{
+    struct node *start = NULL, *newnode, *temp;
+    int val, pos, i;
+
+    printf("Enter initial value (-1 to stop): ");
+    scanf("%d", &val);
+
+    while(val != -1)
+    {
+        newnode = (struct node*)malloc(sizeof(struct node));
+        newnode->data = val;
+        newnode->next = NULL;
+        newnode->prev = NULL;
+
+        if(start == NULL)
+            start = newnode;
+        else
+        {
+            temp = start;
+            while(temp->next != NULL)
+                temp = temp->next;
+
+            temp->next = newnode;
+            newnode->prev = temp;
+        }
+
+        printf("Enter value (-1 to stop): ");
+        scanf("%d", &val);
+    }
+
+    printf("Enter position to insert new node: ");
+    scanf("%d", &pos);
+
+    printf("Enter new value: ");
+    scanf("%d", &val);
+
+    newnode = (struct node*)malloc(sizeof(struct node));
+    newnode->data = val;
+
+    temp = start;
+    for(i = 1; i < pos - 1 && temp != NULL; i++)
+        temp = temp->next;
+
+    if(temp != NULL)
+    {
+        newnode->next = temp->next;
+        newnode->prev = temp;
+
+        if(temp->next != NULL)
+            temp->next->prev = newnode;
+
+        temp->next = newnode;
+    }
+
+    printf("\nUpdated Doubly Linked List:\n");
+    temp = start;
+    while(temp != NULL)
+    {
+        printf("%d \t", temp->data);
+        temp = temp->next;
+    }
+
+    return 0;
+}
+
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners.
+It's my first time creating one, so feel free to suggest
