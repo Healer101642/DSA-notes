@@ -1,0 +1,56 @@
+#Doubly Linked List: adding an element at the start
+
+Explanation:
+1. A new node is created using malloc() and initialized with data, next, and prev pointers.
+2. The new node’s next is set to the current start node.
+3. If the list is not empty, the old start node’s prev is updated to the new node.
+4. The start pointer is updated to the new node, making it the first node of the list.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+    struct node *prev;
+};
+
+int main()
+{
+    struct node *start = NULL, *newnode;
+    struct node *temp;
+    int val;
+
+    printf("Enter value (-1 to stop): ");
+    scanf("%d", &val);
+
+    while(val != -1)
+    {
+        newnode = (struct node*)malloc(sizeof(struct node));
+        newnode->data = val;
+        newnode->prev = NULL;
+        newnode->next = start;
+
+        if(start != NULL)
+            start->prev = newnode;
+
+        start = newnode;
+
+        printf("Enter value (-1 to stop): ");
+        scanf("%d", &val);
+    }
+
+    printf("\nDoubly Linked List:\n");
+    temp = start;
+    while(temp != NULL)
+    {
+        printf("%d \t", temp->data);
+        temp = temp->next;
+    }
+
+    return 0;
+}
+
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners.
+It's my first time creating one, so feel free to suggest
