@@ -1,0 +1,113 @@
+#Circular Linked List: Adding elements at the middle
+
+Explanation:
+1. Create a new node and store the given value in it.
+2. Traverse the circular linked list to reach the node just before the given position.
+3. Link the new node’s next to the next node of the current position.
+4. Update the previous node’s next to point to the new node, inserting it in the middle.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+struct node *start = NULL;
+
+// Insert at end (used to build initial list)
+void insert_end(int val)
+{
+    struct node *newnode, *temp;
+
+    newnode = (struct node *)malloc(sizeof(struct node));
+    newnode->data = val;
+
+    if(start == NULL)
+    {
+        start = newnode;
+        newnode->next = start;
+    }
+    else
+    {
+        temp = start;
+        while(temp->next != start)
+        {
+            temp = temp->next;
+        }
+        temp->next = newnode;
+        newnode->next = start;
+    }
+}
+
+// Insert in the middle (after the given position)
+void insert_middle(int val, int pos)
+{
+    struct node *newnode, *temp;
+    int i;
+
+    newnode = (struct node *)malloc(sizeof(struct node));
+    newnode->data = val;
+
+    temp = start;
+
+    // Traverse to (pos - 1) node
+    for(i = 1; i < pos - 1; i++)
+    {
+        temp = temp->next;
+
+        // If we come back to start, position is invalid
+        if(temp == start)
+        {
+            printf("Invalid position\n");
+            return;
+        }
+    }
+
+    newnode->next = temp->next;
+    temp->next = newnode;
+}
+
+// Display list
+void display()
+{
+    struct node *temp;
+
+    if(start == NULL)
+    {
+        printf("List is empty\n");
+        return;
+    }
+
+    temp = start;
+    do
+    {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+    while(temp != start);
+}
+
+int main()
+{
+    // Creating initial circular linked list
+    insert_end(10);
+    insert_end(20);
+    insert_end(40);
+
+    printf("Before insertion:\n");
+    display();
+
+    // Insert 30 at position 3 (middle)
+    insert_middle(30, 3);
+
+    printf("\nAfter middle insertion:\n");
+    display();
+
+    return 0;
+}
+
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners.
+It's my first time creating one, so feel free to suggest
