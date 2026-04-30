@@ -1,0 +1,83 @@
+#Circular Linked List: Adding an element at the end
+
+Explanation:
+1. Create a new node and assign the given value to it.
+2. If the list is empty, make start = newnode and newnode->next = start.
+3. Otherwise, traverse to the last node (the node whose next points to start).
+4. Update links so the last node points to the new node and the new node points back to the start.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+struct node *start = NULL;
+
+// Insert at the end of the function
+void insert_end(int val)
+{
+    struct node *newnode, *temp;
+
+    newnode = (struct node *)malloc(sizeof(struct node));
+    newnode->data = val;
+
+    if(start == NULL)
+    {
+        // First node case
+        start = newnode;
+        newnode->next = start;
+    }
+    else
+    {
+        temp = start;
+
+        // Traverse to last node
+        while(temp->next != start)
+        {
+            temp = temp->next;
+        }
+
+        temp->next = newnode;   // Last node points to new node
+        newnode->next = start;  // New node points back to start
+    }
+}
+
+// Display function
+void display()
+{
+    struct node *temp;
+
+    if(start == NULL)
+    {
+        printf("List is empty\n");
+        return;
+    }
+
+    temp = start;
+    do
+    {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+    while(temp != start);
+}
+
+int main()
+{
+    insert_end(10);
+    insert_end(20);
+    insert_end(30);
+    insert_end(40);
+
+    printf("Circular Linked List:\n");
+    display();
+
+    return 0;
+}
+
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners.
+It's my first time creating one, so feel free to suggest
