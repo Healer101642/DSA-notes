@@ -1,0 +1,77 @@
+#Circular Linked List Creation
+
+Explanation:
+1. A circular linked list node contains data and a next pointer.
+2. For the first node, start = newnode and newnode->next = start to make it circular.
+3. For additional nodes, traverse to the last node and link it to the new node.
+4. The last node’s next always points back to the start, so it never becomes NULL.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+int main()
+{
+    struct node *start = NULL, *newnode, *temp;
+    int val;
+
+    printf("Enter data (-1 to stop): ");
+    scanf("%d", &val);
+
+    while(val != -1)
+    {
+        // Create new node
+        newnode = (struct node *)malloc(sizeof(struct node));
+        newnode->data = val;
+        newnode->next = NULL;
+
+        if(start == NULL)
+        {
+            // First node
+            start = newnode;
+            newnode->next = start;   // Point to itself
+        }
+        else
+        {
+            // Traverse to last node
+            temp = start;
+            while(temp->next != start)
+            {
+                temp = temp->next;
+            }
+
+            temp->next = newnode;    // Last node → new node
+            newnode->next = start;   // New node → start
+        }
+
+        printf("Enter data (-1 to stop): ");
+        scanf("%d", &val);
+    }
+
+    // Display Circular Linked List
+    if(start != NULL)
+    {
+        printf("\nCircular Linked List:\n");
+        temp = start;
+        do
+        {
+            printf("%d ", temp->data);
+            temp = temp->next;
+        }
+        while(temp != start);
+    }
+    else
+    {
+        printf("List is empty.");
+    }
+
+    return 0;
+}
+
+**Healer note** I personally did C programming in Dev C++, and I will update the other topics soon. I hope this repo helps beginners.
+It's my first time creating one, so feel free to suggest
